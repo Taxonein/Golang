@@ -4,21 +4,15 @@ import "fmt"
 
 func main() {
 	var (
-		c = "text"
+		c        = "text"
 		e string = "sup"
 	)
 	d := 3
 	var names, ages = "Thom", 22
 	const goat = 22
-/*
-	var (
-		a := "Golang"
-		b := "Very interest"
-	)
-*/
 	a := "Golang"
 	b := "Very interest"
-	
-	fmt.Println(a + b + c + e, names)
-	fmt.Println(d * goat + ages)
+
+	fmt.Println(a+b+c+e, names)
+	fmt.Println(d*goat + ages)
 }
