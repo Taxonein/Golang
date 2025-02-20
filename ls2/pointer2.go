@@ -7,8 +7,11 @@ func mat(x *int) {
 }
 
 func main() {
-	d := 5
+	d := 0
 	fmt.Println(d)
 	mat(&d)
 	fmt.Println(d)
+	if &d == nil {
+		fmt.Println(&d)
+	}
 }
