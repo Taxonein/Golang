@@ -23,6 +23,7 @@ var tom = contact{
 
 func main() {
 
+	tom.contact.name = "Gooool"
 	fmt.Println(tom)
 
 }
