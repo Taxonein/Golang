@@ -16,7 +16,7 @@ func main() {
 
 	fmt.Println(people1)
 
-	if val, ok := people["Tom"]; ok { //Если
+	if val, ok := people["Tom"]; ok {
 		fmt.Println(val)
 		fmt.Println(ok)
 	}
