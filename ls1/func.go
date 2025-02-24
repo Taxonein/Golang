@@ -33,8 +33,8 @@ func wtf(numbers ...int) {
 }
 func wtf2(tips ...int) int {
 	sum := 0
-	for _, tips := range tipss {
-		sum += tipss
+	for _, tips := range tips {
+		sum += tips
 	}
 	return (sum)
 }
