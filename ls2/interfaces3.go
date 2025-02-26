@@ -26,18 +26,24 @@ func closeStream(streamm stream3) {
 
 // *******
 
-func (f file3) read() string {
+func (f *file3) read() string {
 	return f.text
 }
-func (f file3) write(message string) {
+func (f *file3) write(message string) {
 	f.text = message
 }
-func (f file3) close() {
+func (f *file3) close() {
 	fmt.Println("Файл закрыт: " + f.text)
 }
 
 //*******
 
 func main() {
+	myfile := file3{}
+	//myfile.write("123")
+	//fmt.Println(myfile.read())
+	//myfile.close()
 
+	writeToStream(&myfile, "YESS")
+	closeStream(&myfile)
 }
