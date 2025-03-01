@@ -15,7 +15,7 @@ func main() {
 		go gol(i, ch, &mutex)
 	}
 
-	for i := 1; i < 5; i++ {
+	for i := 1; i <= 5; i++ {
 		<-ch
 	}
 
