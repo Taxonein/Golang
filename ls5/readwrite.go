@@ -3,19 +3,27 @@ package main
 import (
 	"fmt"
 	"io"
-	"strings"
 )
 
-func main() {
-	r := strings.NewReader("Hello, Reader!")
+type phreader string
 
-	b := make([]byte, 8)
-	for {
-		n, err := r.Read(b)
-		fmt.Printf("n = %v err = %v b = %v\n", n, err, b)
-		fmt.Printf("b[:n] = %q\n", b[:n])
-		if err == io.EOF {
-			break
+func (ph phreader) Read(p []byte) (int, error) {
+
+	count := 0
+	for i := 0; i < len(ph); i++ {
+		if ph[i] >= '0' && ph[i] <= '9' {
+			p[count] = ph[i]
+			count++
 		}
 	}
+	return count, io.EOF
+
+}
+
+func main() {
+	phone1 := phreader("+7-903-531-36-66")
+	buffer := make([]byte, len(phone1))
+
+	phone1.Read(buffer)
+	fmt.Println(phreader(buffer))
 }
